@@ -1,0 +1,54 @@
+/* obliterate everything but display property */
+*:where(:not(iframe, pre, canvas, img, svg, svg *, video)) {
+    all: unset;
+    display: revert;
+}
+
+/* set border-box (https://css-tricks.com/box-sizing/#aa-universal-box-sizing-with-inheritance/) */
+html {
+    box-sizing: border-box;
+}
+
+*,
+*::before,
+*::after {
+    box-sizing: inherit;
+}
+
+/* set font family */
+html {
+    font-family: system-ui, sans-serif;
+}
+
+pre,
+code {
+    font-family: monospace;
+}
+
+/* remove list styles */
+ol,
+ul,
+menu {
+    list-style: none;
+}
+
+/* limit img size to container */
+img {
+    max-width: 100%;
+}
+
+/* fix table cell spacing */
+table {
+    border-collapse: collapse;
+}
+
+/* set cursor for link and button (https://ux.stackexchange.com/questions/105024/why-dont-button-html-elements-have-a-css-cursor-pointer-by-default) */
+a,
+button {
+    cursor: pointer;
+}
+
+/* revert button style */
+button {
+    text-align: revert;
+}
